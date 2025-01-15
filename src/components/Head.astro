@@ -1,0 +1,39 @@
+---
+const {
+  title = "EZOR AI",
+  description = "We create smart AI voice agents to help businesses save time, cut costs, and improve customer interactions. Transform your operations with seamless automation tailored to your needs.",
+} = Astro.props;
+
+const metTitle = "EZOR AI";
+const image = "/main-img.png";
+const url = "https://ezor-ai.netlify.app";
+---
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+<title>{title}</title>
+
+<!-- General -->
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={metTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:title" content={metTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+  rel="stylesheet"
+/>

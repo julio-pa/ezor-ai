@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import Card from "../Card.astro";
+const features = [
+  {
+    title: "Step 1: Discovery Session",
+    description:
+      "Spend 15 minutes with our experts to uncover your unique business needs and challenges. We’ll dive into your goals and identify the automation solutions that will make the biggest impact on your operations.",
+  },
+  {
+    title: "Step 2: Tailored Strategy Plan",
+    description:
+      "After understanding your requirements, we’ll craft a personalized action plan. From AI voice agents to cold email automation, our solutions are designed to optimize your workflows and ensure measurable success.",
+  },
+  {
+    title: "Step 3: Implementation",
+    description:
+      "Our team will set up and deploy your customized automation system, seamlessly integrating it into your existing processes. From intake form automation to chatbots, we ensure everything is fully operational in no time.",
+  },
+];
+---
+
+<div class="relative mt-12 md:mt-24">
+  <Image
+    src="/gray-circle.svg"
+    alt="How It Works"
+    class="h-96 w-96 object-cover rounded-3xl absolute top-28 left-1/2 z-0 -translate-x-1/2 blur-xl opacity-30"
+    height={384}
+    width={384}
+  />
+  <h1 class="text-center">How It Works</h1>
+  <div
+    class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+  >
+    {
+      features.map((feature) => (
+        <Card title={feature.title} description={feature.description} />
+      ))
+    }
+  </div>
+</div>
