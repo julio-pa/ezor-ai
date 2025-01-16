@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imagePosition: "left" | "right";
+  features: string[];
+}
+
+const { title, description, imageUrl, imagePosition, features } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row items-center gap-8 py-16">
+  {
+    imagePosition === "left" && (
+      <div class="w-full md:w-1/2">
+        <img
+          src={imageUrl}
+          alt={title}
+          class="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+    )
+  }
+
+  <div class="w-full md:w-1/2 space-y-4">
+    <h3 class="text-2xl font-bold text-white">{title}</h3>
+    <p class="text-gray-300">{description}</p>
+    <ul class="space-y-2">
+      {
+        features.map((feature) => (
+          <li class="flex items-center text-gray-300">
+            <svg
+              class="w-4 h-4 mr-2 text-green-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            {feature}
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      href="#"
+      class="self-start cursor-pointer h-10 px-4 py-2 text-sm text-white transition-all rounded-lg hover:to-gray-700 bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600 inline-block"
+    >
+      Get Started →
+    </a>
+  </div>
+
+  {
+    imagePosition === "right" && (
+      <div class="w-full md:w-1/2">
+        <img
+          src={imageUrl}
+          alt={title}
+          class="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+    )
+  }
+</div>

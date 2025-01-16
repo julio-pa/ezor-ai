@@ -1,0 +1,73 @@
+---
+import ServiceCard from "../ServiceCard.astro";
+
+const services = [
+  {
+    title: "Voice Agents",
+    description:
+      "Revolutionize customer interactions with AI-powered Voice Agents:",
+    imageUrl: "/voice.png",
+    features: [
+      "Handle customer queries 24/7.",
+      "Provide personalized, efficient support.",
+      "Conduct follow-up calls and drive sales.",
+      "Send reminders and important updates.",
+      "Store data in the CRM system.",
+    ],
+  },
+  {
+    title: "Chatbots",
+    description:
+      "Enhance customer engagement with intelligent, AI-powered chatbots:",
+    imageUrl: "chatbot.png",
+    features: [
+      "Available 24/7 to answer customer queries instantly.",
+      "Provide personalized and consistent support across platforms.",
+      "Automate repetitive tasks like order tracking and FAQs.",
+      "Boost customer satisfaction with quick and efficient responses.",
+    ],
+  },
+  {
+    title: "Cold Email Automation",
+    description:
+      "Streamline your outreach with intelligent, AI-driven cold email automation:",
+    imageUrl: "emailAuto.png",
+    features: [
+      "Create personalized emails at scale with dynamic placeholders.",
+      "Automate follow-ups to ensure higher response rates.",
+      "Track email performance with real-time analytics.",
+      "Save time and increase efficiency in lead generation.",
+    ],
+  },
+  {
+    title: "Intake Form Automation",
+    description:
+      "Simplify data collection with AI-driven intake form automation:",
+    imageUrl: "/form.png",
+    features: [
+      "Automatically organize and store responses in your CRM.",
+      "Eliminate manual data entry, saving time and reducing errors.",
+      "Customize forms to capture the exact information you need.",
+      "Send personalized follow-up emails to respondents instantly.",
+      "Streamline workflows by integrating directly with other tools.",
+    ],
+  },
+];
+---
+
+<section class="container mx-auto px-4 py-16">
+  <h1 class="text-center">Our Services</h1>
+  <div class="space-y-16">
+    {
+      services.map((service, index) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          imageUrl={service.imageUrl}
+          imagePosition={index % 2 === 0 ? "left" : "right"}
+          features={service.features}
+        />
+      ))
+    }
+  </div>
+</section>
