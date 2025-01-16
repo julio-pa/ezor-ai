@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
+const calendlyLink = "https://calendly.com/ezorai27/30min";
 ---
 
-<div>
+<section id="#hero" class="flex flex-col gap-12 min-h-[90vh] pt-20">
   <Image
     src="/gray-circle.svg"
     alt="How It Works"
@@ -11,9 +12,16 @@ import { Image } from "astro:assets";
     width={384}
   />
   <h1>EMPOWER YOUR BUSINESS WITH EZOR AI</h1>
-  <p>
+  <p class="max-w-xl">
     We create smart AI voice agents to help businesses save time, cut costs, and
     improve customer interactions. Transform your operations with seamless
     automation tailored to your needs.
   </p>
-</div>
+  <a
+    href={calendlyLink}
+    target="_blank"
+    title="Schedule a free AI demo call"
+    class="self-start cursor-pointer h-10 px-4 py-2 text-sm text-white transition-all rounded-lg hover:to-gray-700 bg-gradient-to-b from-gray-400 via-gray-500 to-gray-600"
+    >Free AI Demo Call
+  </a>
+</section>

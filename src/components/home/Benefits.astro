@@ -1,0 +1,49 @@
+---
+import Card from "../Card.astro";
+const benefits = [
+  {
+    title: "24/7 Availability: ",
+    description:
+      "Never miss a customer call. Inbound voice agents work round the clock, ensuring your customers always feel heard and valued",
+  },
+  {
+    title: "Improved Efficiency",
+    description:
+      "Automate repetitive tasks such as FAQs or appointment scheduling, freeing up your human team for more complex tasks.",
+  },
+  {
+    title: "CRM Integration",
+    description:
+      "Inbound agents can store caller information, appointment details, and customer preferences directly into your CRM system, ensuring accurate and organized data management.",
+  },
+  {
+    title: "Personalized Follow-Up",
+    description:
+      "After a call, the AI can trigger personalized follow-up emails or messages, ensuring customers stay engaged and informed",
+  },
+  {
+    title: "Cost Efficiency",
+    description:
+      "Reduce the need for large customer support teams while maintaining high-quality service.",
+  },
+  {
+    title: "Scalability",
+    description:
+      "Handle thousands of outbound calls efficiently without the need for a large sales or support team.",
+  },
+];
+---
+
+<section id="Benefits" class="flex flex-col gap-3 mt-12 md:mt-24">
+  <h1 class="text-center">Benefits</h1>
+  <p class="w-full text-center">
+    Discover the Benefits of the AI Automation for your business
+  </p>
+  <div class="grid grid-cols-1 mt-6 list-none md:grid-cols-3 gap-2">
+    {
+      benefits.map((feature) => (
+        <Card title={feature.title} description={feature.description} />
+      ))
+    }
+  </div>
+</section>
